@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kriangrit Boonsawa — Legal & AI Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0d1f3c;
+      --navy-mid:   #1b3a6b;
+      --tech-bg:    #f0f4fa;
+      --white:      #ffffff;
+      --page-bg:    #f9f8f6;
+      --text:       #1e293b;
+      --muted:      #64748b;
+      --border:     #e2e8f0;
+      --accent:     #2563eb;
+      --accent-lt:  #eff6ff;
+      --nav-h:      60px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--page-bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ══════════════════════════════
+       NAV
+    ══════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+    }
+
+    .nav-logo {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 36px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* ══════════════════════════════
+       HERO
+    ══════════════════════════════ */
+    #hero {
+      min-height: 100vh;
+      padding-top: var(--nav-h);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* — top split — */
+    .hero-panels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      flex: 1;
+    }
+
+    .panel {
+      padding: 72px 56px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .panel-law  { background: var(--navy); }
+    .panel-tech { background: var(--tech-bg); }
+
+    .panel-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .panel-law  .panel-label { color: rgba(255,255,255,0.35); }
+    .panel-tech .panel-label { color: var(--muted); }
+
+    .panel-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .panel-items li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .panel-law  .panel-items li { color: rgba(255,255,255,0.88); }
+    .panel-tech .panel-items li { color: var(--text); }
+
+    .panel-items li .icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      border-radius: 7px;
+      flex-shrink: 0;
+    }
+
+    .panel-law  .icon { background: rgba(255,255,255,0.08); }
+    .panel-tech .icon { background: var(--white); }
+
+    /* — bottom identity — */
+    .hero-identity {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 52px 56px 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .eyebrow-law  { color: var(--navy-mid); }
+    .eyebrow-sep  { color: var(--muted); }
+    .eyebrow-tech { color: var(--accent); }
+
+    .hero-name {
+      font-size: clamp(36px, 5.5vw, 60px);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -1.5px;
+      line-height: 1.05;
+    }
+
+    .hero-tagline {
+      font-size: 17px;
+      color: var(--muted);
+      font-weight: 400;
+      max-width: 520px;
+      line-height: 1.65;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.18s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-mid);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(13,31,60,0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: #94a3b8;
+      background: var(--page-bg);
+      transform: translateY(-1px);
+    }
+
+    /* ══════════════════════════════
+       SECTION SHARED
+    ══════════════════════════════ */
+    .section-wrap {
+      padding: 96px 56px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-meta {
+      margin-bottom: 48px;
+    }
+
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .section-heading {
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+    }
+
+    .section-sub {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 10px;
+      max-width: 540px;
+      line-height: 1.75;
+    }
+
+    .section-rule {
+      width: 40px;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 2px;
+      margin-top: 20px;
+    }
+
+    /* ══════════════════════════════
+       ABOUT
+    ══════════════════════════════ */
+    #about { background: var(--page-bg); }
+
+    .about-body {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .about-text strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .about-aside {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .aside-block {}
+
+    .aside-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .aside-stat {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .aside-stat-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .aside-divider {
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ══════════════════════════════
+       PROJECTS
+    ══════════════════════════════ */
+    #projects { background: var(--white); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .pcard {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: box-shadow 0.2s, transform 0.2s;
+      background: var(--white);
+    }
+
+    .pcard:hover {
+      box-shadow: 0 12px 32px rgba(13,31,60,0.09);
+      transform: translateY(-3px);
+    }
+
+    .pcard-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .pcard-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--muted);
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.2px;
+    }
+
+    .badge.deployed { background: #dcfce7; color: #166534; }
+    .badge.in-dev   { background: #fef9c3; color: #854d0e; }
+    .badge.team     { background: #ede9fe; color: #5b21b6; }
+
+    .pcard-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    .pcard-desc {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.75;
+      flex: 1;
+    }
+
+    .pcard-impact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .impact-chip {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      background: var(--accent-lt);
+      color: var(--accent);
+      border-radius: 6px;
+    }
+
+    .pcard-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stack-tag {
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 3px 9px;
+      background: var(--page-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+    }
+
+    /* ══════════════════════════════
+       RESUME
+    ══════════════════════════════ */
+    #resume { background: var(--page-bg); }
+
+    .accordion { display: flex; flex-direction: column; gap: 10px; }
+
+    .acc-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .acc-trigger {
+      width: 100%;
+      padding: 18px 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      text-align: left;
+      transition: background 0.15s;
+    }
+
+    .acc-trigger:hover { background: var(--page-bg); }
+
+    .acc-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .acc-icon {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+      background: var(--page-bg);
+    }
+
+    .acc-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .acc-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .acc-arrow {
+      font-size: 14px;
+      color: var(--muted);
+      transition: transform 0.22s;
+      flex-shrink: 0;
+    }
+
+    .acc-item.open .acc-arrow { transform: rotate(180deg); }
+
+    .acc-body {
+      display: none;
+      padding: 4px 24px 24px;
+    }
+
+    .acc-item.open .acc-body { display: block; }
+
+    /* resume internals */
+    .rjob { padding-top: 20px; }
+    .rjob + .rjob {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .rjob-hd {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+
+    .rjob-title   { font-size: 14px; font-weight: 700; color: var(--text); }
+    .rjob-company { font-size: 13px; font-weight: 500; color: var(--accent); margin-top: 2px; }
+    .rjob-period  { font-size: 12px; color: var(--muted); font-style: italic; white-space: nowrap; }
+
+    .rsub {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin: 14px 0 8px;
+    }
+
+    .rul {
+      padding-left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .rul li {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .rul li::marker { color: var(--navy); }
+
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 4px;
+      padding: 14px 0;
+    }
+
+    .edu-row + .edu-row { border-top: 1px solid var(--border); }
+
+    .edu-deg  { font-size: 14px; font-weight: 600; color: var(--text); }
+    .edu-inst { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+    .edu-yr   { font-size: 12px; color: var(--muted); font-style: italic; white-space: nowrap; }
+
+    .skill-rows { display: flex; flex-direction: column; gap: 14px; padding-top: 16px; }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .skill-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--navy-mid);
+      padding-top: 3px;
+    }
+
+    .skill-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .skill-chip {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 3px 10px;
+      background: var(--page-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+    }
+
+    /* ══════════════════════════════
+       CONTACT
+    ══════════════════════════════ */
+    #contact {
+      background: var(--navy);
+      padding: 80px 56px;
+    }
+
+    #contact .section-eyebrow  { color: rgba(255,255,255,0.40); }
+    #contact .section-heading  { color: var(--white); }
+    #contact .section-sub      { color: rgba(255,255,255,0.55); }
+    #contact .section-rule     { background: rgba(255,255,255,0.18); }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 40px;
+    }
+
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.80);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      text-decoration: none;
+      transition: all 0.18s;
+    }
+
+    .contact-chip:hover {
+      background: rgba(255,255,255,0.12);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .footer-foot {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      color: rgba(255,255,255,0.22);
+    }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (max-width: 720px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+
+      .hero-panels { grid-template-columns: 1fr; }
+      .panel { padding: 40px 24px 32px; gap: 20px; }
+      .panel-law { order: 1; }
+      .panel-tech { order: 2; }
+      .panel-items li { font-size: 15px; }
+      .hero-identity { padding: 36px 24px 40px; }
+
+      .section-wrap { padding: 64px 24px; }
+
+      .about-body { grid-template-columns: 1fr; gap: 40px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .skill-row { grid-template-columns: 1fr; gap: 4px; }
+
+      #contact { padding: 56px 24px; }
+    }
+
+    /* ══════════════════════════════
+       PRINT
+    ══════════════════════════════ */
+    @media print {
+      nav, #hero, #about, #projects, #contact { display: none; }
+      #resume { display: block; }
+      .section-wrap { padding: 20px; }
+      .acc-trigger { display: none; }
+      .acc-body { display: block !important; padding: 0; }
+      .acc-item { border: none; background: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Kriangrit Boonsawa</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+
+    <div class="hero-panels">
+      <!-- Law side -->
+      <div class="panel panel-law">
+        <div class="panel-label">Law</div>
+        <ul class="panel-items">
+          <li><span class="icon">⚖️</span> OIC Regulatory</li>
+          <li><span class="icon">📄</span> Contract Review</li>
+          <li><span class="icon">🏛️</span> Govt. Liaison</li>
+          <li><span class="icon">💼</span> Legal Advisory</li>
+          <li><span class="icon">🔍</span> Compliance</li>
+        </ul>
+      </div>
+      <!-- Tech side -->
+      <div class="panel panel-tech">
+        <div class="panel-label">Tech</div>
+        <ul class="panel-items">
+          <li><span class="icon">⚙️</span> Google Apps Script</li>
+          <li><span class="icon">🤖</span> Gemini API</li>
+          <li><span class="icon">🔗</span> Process Automation</li>
+          <li><span class="icon">🚀</span> Production Deployed</li>
+          <li><span class="icon">📊</span> Google Workspace</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hero-identity">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-law">Legal Officer</span>
+        <span class="eyebrow-sep">×</span>
+        <span class="eyebrow-tech">AI Systems Builder</span>
+      </div>
+      <h1 class="hero-name">Kriangrit Boonsawa</h1>
+      <p class="hero-tagline">Building AI-powered systems from inside a regulated insurance company — and shipping them to production.</p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary">See My Work ↓</a>
+        <a href="Kriangrit_Resume_ORICO_v3.pdf" class="btn btn-outline" download>Download CV</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-wrap">
+      <div class="section-meta">
+        <div class="section-eyebrow">About</div>
+        <h2 class="section-heading">Not a developer.<br>But I ship.</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="about-body">
+        <div class="about-text">
+          <p>
+            I'm an in-house legal officer at Ocean Life Insurance — which means I spend my days navigating
+            OIC regulations, reviewing contracts, and coordinating with government agencies.
+            <strong>That's the job description.</strong>
+          </p>
+          <p>
+            But I noticed early on that a significant portion of legal work is repetitive and process-driven.
+            So I started building systems to handle it — first small scripts, then full automation pipelines
+            using Google Apps Script and the Gemini API.
+          </p>
+          <p>
+            None of these started as official projects. They started as a personal frustration with inefficiency
+            and a willingness to figure things out. <strong>Four of them are now running in production.</strong>
+          </p>
+        </div>
+        <div class="about-aside">
+          <div class="aside-block">
+            <div class="aside-label">Experience</div>
+            <div class="aside-stat">5+</div>
+            <div class="aside-stat-sub">years in legal & compliance</div>
+          </div>
+          <div class="aside-divider"></div>
+          <div class="aside-block">
+            <div class="aside-label">Systems Built</div>
+            <div class="aside-stat">4</div>
+            <div class="aside-stat-sub">production-deployed or in dev</div>
+          </div>
+          <div class="aside-divider"></div>
+          <div class="aside-block">
+            <div class="aside-label">Currently</div>
+            <div class="aside-stat-sub" style="font-size:14px;color:var(--text)">Thai Bar Examination<br>+ Contract Gen System</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-wrap">
+      <div class="section-meta">
+        <div class="section-eyebrow">Work</div>
+        <h2 class="section-heading">Legal Tech Projects</h2>
+        <p class="section-sub">Automation systems built inside a regulated insurance environment — self-initiated and team.</p>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="pcard">
+          <div class="pcard-top">
+            <span class="pcard-num">01</span>
+            <span class="badge deployed">Deployed</span>
+          </div>
+          <div class="pcard-name">OIC Compliance Email Automation</div>
+          <p class="pcard-desc">
+            End-to-end workflow for managing OIC policyholder verification requests. Auto-detects requests,
+            logs to a shared registry across 3 departments, and dispatches standardised responses for ~85%
+            of cases after legal review.
+          </p>
+          <div class="pcard-impact">
+            <span class="impact-chip">800+ threads</span>
+            <span class="impact-chip">~1,200 requests</span>
+            <span class="impact-chip">0 missed cases</span>
+          </div>
+          <div class="pcard-stack">
+            <span class="stack-tag">Apps Script</span>
+            <span class="stack-tag">Gmail API</span>
+            <span class="stack-tag">Google Sheets</span>
+          </div>
+        </div>
+
+        <div class="pcard">
+          <div class="pcard-top">
+            <span class="pcard-num">02</span>
+            <span class="badge in-dev">In Development</span>
+          </div>
+          <div class="pcard-name">AI-Assisted Contract Generation</div>
+          <p class="pcard-desc">
+            Trigger-based pipeline that detects contract request emails, uses Gemini API OCR to extract
+            party details, auto-populates standard templates, and runs a second AI validation pass before
+            legal sign-off.
+          </p>
+          <div class="pcard-impact">
+            <span class="impact-chip">Full lifecycle</span>
+            <span class="impact-chip">AI validation</span>
+          </div>
+          <div class="pcard-stack">
+            <span class="stack-tag">Apps Script</span>
+            <span class="stack-tag">Gemini API</span>
+            <span class="stack-tag">OCR</span>
+            <span class="stack-tag">Google Docs</span>
+          </div>
+        </div>
+
+        <div class="pcard">
+          <div class="pcard-top">
+            <span class="pcard-num">03</span>
+            <span class="badge team">Team Project</span>
+          </div>
+          <div class="pcard-name">Centralised Bankruptcy Status Database</div>
+          <p class="pcard-desc">
+            Cross-functional system centralising daily bankruptcy data — previously siloed in the Legal Office
+            — into a company-wide shared lookup available to all departments before executing customer
+            transactions.
+          </p>
+          <div class="pcard-impact">
+            <span class="impact-chip">Company-wide</span>
+            <span class="impact-chip">Real-time lookup</span>
+          </div>
+          <div class="pcard-stack">
+            <span class="stack-tag">Google Sheets</span>
+            <span class="stack-tag">Apps Script</span>
+          </div>
+        </div>
+
+        <div class="pcard">
+          <div class="pcard-top">
+            <span class="pcard-num">04</span>
+            <span class="badge team">Team Project</span>
+          </div>
+          <div class="pcard-name">AI-Powered Legal Advisory Chatbot</div>
+          <p class="pcard-desc">
+            Identified that repetitive legal queries consumed significant attorney time. Compiled the full
+            archive of past advisory responses, trained a custom Gemini Gem, and deployed it as a
+            self-service tool for internal departments.
+          </p>
+          <div class="pcard-impact">
+            <span class="impact-chip">Frees attorney time</span>
+            <span class="impact-chip">Internal deployment</span>
+          </div>
+          <div class="pcard-stack">
+            <span class="stack-tag">Gemini Gem</span>
+            <span class="stack-tag">Prompt Engineering</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume">
+    <div class="section-wrap">
+      <div class="section-meta">
+        <div class="section-eyebrow">Background</div>
+        <h2 class="section-heading">Resume</h2>
+        <p class="section-sub">Full work history, education, and skills. Or <a href="Kriangrit_Resume_ORICO_v3.pdf" download style="color:var(--accent)">download the PDF</a>.</p>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="accordion">
+
+        <!-- Work Experience -->
+        <div class="acc-item open">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <div class="acc-left">
+              <div class="acc-icon">💼</div>
+              <div>
+                <div class="acc-title">Work Experience</div>
+                <div class="acc-sub">3 positions · 2019 – Present</div>
+              </div>
+            </div>
+            <span class="acc-arrow">▾</span>
+          </button>
+          <div class="acc-body">
+
+            <div class="rjob">
+              <div class="rjob-hd">
+                <div>
+                  <div class="rjob-title">Legal Officer</div>
+                  <div class="rjob-company">Ocean Life Insurance Public Company Limited · Legal Office</div>
+                </div>
+                <div class="rjob-period">August 2023 – Present</div>
+              </div>
+              <div class="rsub">Consultant Section — Core Responsibilities</div>
+              <ul class="rul">
+                <li>Monitor daily OIC legislative and regulatory updates; prepare impact summaries and notify relevant departments to ensure timely compliance.</li>
+                <li>Provide legal advisory to cross-departmental teams on regulatory matters, internal policies, and OIC-related compliance requirements.</li>
+                <li>Serve as a primary legal advisory point of contact for internal business units, responding to day-to-day legal inquiries across operational, HR, and commercial matters.</li>
+                <li>Review advertising and PR materials for compliance with OIC regulations and consumer protection laws prior to publication.</li>
+                <li>Provide legal input on new insurance product development ahead of OIC regulatory submission.</li>
+                <li>Coordinate company registration filings and submissions to government agencies including the DBD, Revenue Department, and District Office, following the consolidation of these responsibilities into the Consultant Section after internal restructure.</li>
+              </ul>
+              <div class="rsub">Contract Section (Secondment, 5 months)</div>
+              <ul class="rul">
+                <li>Drafted, reviewed, and negotiated approximately 80–100 corporate contracts including lease agreements, service agreements, MOUs, and group insurance policies.</li>
+                <li>Coordinated corporate registrations and filings with government agencies: Revenue Department, DBD, Land Department, and District Office.</li>
+                <li>Conducted legal research and provided advisory opinions on contract terms and internal company regulations.</li>
+              </ul>
+              <div class="rsub">OIC Complaints Handling (Prior to Restructure)</div>
+              <ul class="rul">
+                <li>Addressed and resolved OIC complaints at 2–3 cases per month, coordinating responses and preparing formal submissions to the regulator.</li>
+                <li>Responsibility transferred to the Litigation Section following internal restructure.</li>
+              </ul>
+            </div>
+
+            <div class="rjob">
+              <div class="rjob-hd">
+                <div>
+                  <div class="rjob-title">Paralegal</div>
+                  <div class="rjob-company">Vichit Law Office</div>
+                </div>
+                <div class="rjob-period">November 2019 – July 2023</div>
+              </div>
+              <ul class="rul">
+                <li>Prepared legal pleadings and compiled comprehensive case files for civil and commercial court proceedings.</li>
+                <li>Managed registration submissions and applications to government agencies on behalf of clients.</li>
+                <li>Conducted legal research supporting attorney consultations, case strategy, and client advisory.</li>
+              </ul>
+            </div>
+
+            <div class="rjob">
+              <div class="rjob-hd">
+                <div>
+                  <div class="rjob-title">Legal Intern</div>
+                  <div class="rjob-company">Lawyer Association of Thailand</div>
+                </div>
+                <div class="rjob-period">April 2021 – September 2021</div>
+              </div>
+              <ul class="rul">
+                <li>Performed legal research to support client consultations under supervising attorneys.</li>
+                <li>Gained practical experience in legal advice and individual client counseling.</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <div class="acc-left">
+              <div class="acc-icon">🎓</div>
+              <div>
+                <div class="acc-title">Education &amp; Certifications</div>
+                <div class="acc-sub">LL.B. · Lawyer License · Bar Examination</div>
+              </div>
+            </div>
+            <span class="acc-arrow">▾</span>
+          </button>
+          <div class="acc-body">
+            <div class="edu-row">
+              <div>
+                <div class="edu-deg">Bachelor of Laws (LL.B.)</div>
+                <div class="edu-inst">Ramkhamhaeng University · GPA 2.54</div>
+              </div>
+              <div class="edu-yr">Jul 2020</div>
+            </div>
+            <div class="edu-row">
+              <div>
+                <div class="edu-deg">Lawyer License</div>
+                <div class="edu-inst">The Lawyers Council of Thailand</div>
+              </div>
+              <div class="edu-yr">Jun 2022</div>
+            </div>
+            <div class="edu-row">
+              <div>
+                <div class="edu-deg">Barrister-at-Law Program (Thai Bar Examination)</div>
+                <div class="edu-inst">Institute of Legal Education, Thai Bar Association</div>
+              </div>
+              <div class="edu-yr">Currently Enrolled</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="acc-item">
+          <button class="acc-trigger" onclick="toggleAcc(this)">
+            <div class="acc-left">
+              <div class="acc-icon">🛠️</div>
+              <div>
+                <div class="acc-title">Skills</div>
+                <div class="acc-sub">Legal · Technical · Languages</div>
+              </div>
+            </div>
+            <span class="acc-arrow">▾</span>
+          </button>
+          <div class="acc-body">
+            <div class="skill-rows">
+              <div class="skill-row">
+                <div class="skill-label">Languages</div>
+                <div class="skill-chips">
+                  <span class="skill-chip">Thai (Native)</span>
+                  <span class="skill-chip">English — Conversational</span>
+                  <span class="skill-chip">Reading / Writing Proficient</span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-label">Legal</div>
+                <div class="skill-chips">
+                  <span class="skill-chip">OIC Regulatory</span>
+                  <span class="skill-chip">Contract Drafting &amp; Review</span>
+                  <span class="skill-chip">Legal Advisory</span>
+                  <span class="skill-chip">Legal Research</span>
+                  <span class="skill-chip">Govt. Liaison</span>
+                  <span class="skill-chip">Compliance Monitoring</span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-label">Technical</div>
+                <div class="skill-chips">
+                  <span class="skill-chip">JavaScript</span>
+                  <span class="skill-chip">Google Apps Script</span>
+                  <span class="skill-chip">Gemini API</span>
+                  <span class="skill-chip">AI Tools</span>
+                  <span class="skill-chip">Process Automation</span>
+                  <span class="skill-chip">MS Office</span>
+                </div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-label">Soft Skills</div>
+                <div class="skill-chips">
+                  <span class="skill-chip">Presentation</span>
+                  <span class="skill-chip">Active Listening</span>
+                  <span class="skill-chip">Critical Thinking</span>
+                  <span class="skill-chip">Adaptability</span>
+                  <span class="skill-chip">Cross-functional Coordination</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-wrap">
+      <div class="section-meta">
+        <div class="section-eyebrow">Contact</div>
+        <h2 class="section-heading">Let's Connect</h2>
+        <p class="section-sub">Open to conversations about legal tech, AI automation, and in-house legal roles.</p>
+        <div class="section-rule"></div>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:Kriangrit.Bsw@gmail.com" class="contact-chip">✉ Kriangrit.Bsw@gmail.com</a>
+        <a href="tel:0949399251" class="contact-chip">📞 094-939-9251</a>
+        <a href="Kriangrit_Resume_ORICO_v3.pdf" class="contact-chip" download>⬇ Download CV (PDF)</a>
+      </div>
+      <div class="footer-foot">Kriangrit Boonsawa · Bangkok, Thailand · 2025</div>
+    </div>
+  </section>
+
+  <script>
+    function toggleAcc(trigger) {
+      trigger.closest('.acc-item').classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
